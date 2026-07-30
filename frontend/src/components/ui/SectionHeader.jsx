@@ -1,28 +1,66 @@
-export default function SectionHeader({
-  title,
-  subtitle,
-  actions,
-}) {
+import { ShieldCheck, Clock3 } from "lucide-react";
+
+export default function SectionHeader() {
   return (
-    <div className="mb-6 flex items-center justify-between">
+    <div className="mb-8 flex items-center justify-between">
 
       <div>
 
-        <h2 className="text-2xl font-bold">
-          {title}
-        </h2>
+        <h1 className="text-4xl font-bold tracking-tight">
+          Good Afternoon, Mukti 👋
+        </h1>
 
         <p
+          className="mt-3 text-lg"
           style={{
             color: "var(--text-secondary)",
           }}
         >
-          {subtitle}
+          AI-powered Security Operations Center
         </p>
 
       </div>
 
-      {actions}
+      <div className="flex gap-4">
+
+        <div
+          className="rounded-2xl border px-5 py-4"
+          style={{
+            borderColor: "var(--border)",
+            background: "var(--surface)",
+          }}
+        >
+          <div className="flex items-center gap-2">
+
+            <ShieldCheck
+              size={18}
+              color="#22c55e"
+            />
+
+            <span>System Healthy</span>
+
+          </div>
+
+        </div>
+
+        <div
+          className="rounded-2xl border px-5 py-4"
+          style={{
+            borderColor: "var(--border)",
+            background: "var(--surface)",
+          }}
+        >
+          <div className="flex items-center gap-2">
+
+            <Clock3 size={18} />
+
+            <span>Last Sync 2 sec</span>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
   );
